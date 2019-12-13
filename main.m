@@ -29,7 +29,7 @@ end
 % The pattern images are stored in the RGB image with the following order:
 % 
 % G0, G1, ..., G7, R0, ..., R7, B0, ..., B7
-
+% 
 % The output image is stored in rgb_im and by default it is written to
 % out.bmp
 
