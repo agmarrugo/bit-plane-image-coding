@@ -3,6 +3,7 @@
 % Main file for creating the 24 bit depth RGB bmp file from 1-bit pattern
 % images stored as individual bmp files
 
+% Andres Marrugo, 2019
 
 % The 1-bit pattern images were generated and stored in a folder:
 % 
