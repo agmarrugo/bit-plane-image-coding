@@ -7,17 +7,17 @@
 
 % The 1-bit pattern images were generated and stored in a folder:
 % 
-% input_pattern_images/
-% ├── bitPlane_00.bmp
-% ├── bitPlane_01.bmp
-% ├── bitPlane_02.bmp
-% ├── bitPlane_03.bmp
-% ├── bitPlane_04.bmp
-% ├── bitPlane_05.bmp
-% ├── bitPlane_06.bmp
-% ├── bitPlane_07.bmp
-% ├── bitPlane_08.bmp
-% └── bitPlane_09.bmp
+% input_pattern_images/ 
+% |__ bitPlane_00.bmp
+% |__ bitPlane_01.bmp
+% |__ bitPlane_02.bmp
+% |__ bitPlane_03.bmp
+% |__ bitPlane_04.bmp
+% |__ bitPlane_05.bmp
+% |__ bitPlane_06.bmp
+% |__ bitPlane_07.bmp
+% |__ bitPlane_08.bmp
+% |__ bitPlane_09.bmp
 
 % We call the createRGBPatternImage function with the basename for the
 % images and folder path
