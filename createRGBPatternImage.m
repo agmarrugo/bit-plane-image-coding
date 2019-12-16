@@ -25,6 +25,9 @@ function rgb = createRGBPatternImage(Basename, Path, writeFile)
 % bit position 0 is the least significant bit, while bit position 7 is 
 % the most significant bit.
 
+% TODO: Need to create additional image if there are more than 24 bit plane
+% images.
+
 if nargin<3,
     writeFile = true;
 end
