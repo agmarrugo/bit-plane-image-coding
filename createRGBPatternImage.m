@@ -53,18 +53,29 @@ rgb = uint8(zeros(height,width,3));
 bit_values = uint8([1 2 4 8 16 32 64 128]);
 bit_values = [bit_values bit_values bit_values];
 
+% For writing the order of patterns
+fileID = fopen('out_rgb_order.txt','w');
+
 for k = 1:numel(listFiles),
     bitPlaneImage = uint8(im2bw(imread(strcat(Path,listFiles(k).name))));
     
     if k < 9,
-        rgb(:,:,2) = rgb(:,:,2) + bitPlaneImage.*bit_values(k);
+        rgb(:,:,2) = rgb(:,:,2) + bitPlaneImage.*bit_values(k); 
+        fprintf(fileID, 'G%d <- \t %s  \n',k-1, listFiles(k).name);
+
     elseif k < 17,
         rgb(:,:,1) = rgb(:,:,1) + bitPlaneImage.*bit_values(k);
+        fprintf(fileID, 'R%d <- \t %s \n', k-9, listFiles(k).name);
+        
     else
         rgb(:,:,3) = rgb(:,:,3) + bitPlaneImage.*bit_values(k);
+        fprintf(fileID, 'B%d <- \t %s \n', k-17, listFiles(k).name);
+        
     end
     
 end
+
+fclose(fileID);
 
 if writeFile,
     imwrite(rgb,'out.bmp');
