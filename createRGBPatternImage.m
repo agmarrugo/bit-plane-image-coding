@@ -90,9 +90,9 @@ for q=1:num_rgb,
             
         end
         
+        kk = kk+1;
+        
     end
-    
-    kk = kk+1;
     
 end
 
