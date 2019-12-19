@@ -48,9 +48,9 @@ switch num_rgb
     case 1
         bits_per_rgb = numBitPlanes;
     case 2
-        bits_per_rgb = [23 numBitPlanes-23];
+        bits_per_rgb = [24 numBitPlanes-24];
     case 3
-        bits_per_rgb = [23 23 numBitPlanes-23];
+        bits_per_rgb = [24 24 numBitPlanes-24];
 end
     
 
@@ -63,7 +63,7 @@ end
 % numel(listFiles)
 
 rgb = uint8(zeros(height,width,3,num_rgb));
-bit_values = uint8([1 2 4 8 16 32 64 128]);
+bit_values = uint8(2.^(0:7));
 bit_values = [bit_values bit_values bit_values];
 
 % For writing the order of patterns
@@ -77,15 +77,15 @@ for q=1:num_rgb,
         bitPlaneImage = uint8(im2bw(imread(strcat(Path,listFiles(kk).name))));
         
         if k < 9,
-            rgb(:,:,2,q) = rgb(:,:,2) + bitPlaneImage.*bit_values(k);
+            rgb(:,:,2,q) = rgb(:,:,2,q) + bitPlaneImage.*bit_values(k);
             fprintf(fileID, 'G%d <- \t %s  \n',k-1, listFiles(kk).name);
             
         elseif k < 17,
-            rgb(:,:,1,q) = rgb(:,:,1) + bitPlaneImage.*bit_values(k);
+            rgb(:,:,1,q) = rgb(:,:,1,q) + bitPlaneImage.*bit_values(k);
             fprintf(fileID, 'R%d <- \t %s \n', k-9, listFiles(kk).name);
             
         else
-            rgb(:,:,3,q) = rgb(:,:,3) + bitPlaneImage.*bit_values(k);
+            rgb(:,:,3,q) = rgb(:,:,3,q) + bitPlaneImage.*bit_values(k);
             fprintf(fileID, 'B%d <- \t %s \n', k-17, listFiles(kk).name);
             
         end
