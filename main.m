@@ -25,7 +25,7 @@ if isunix
     rgb_im = createRGBPatternImage('bitPlane_', 'input_pattern_images/');
 else
     rgb_im = createRGBPatternImage('bitPlane_', 'input_pattern_images\');
-end
+end                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 
 % The pattern images are stored in the RGB image with the following order:
 % 
