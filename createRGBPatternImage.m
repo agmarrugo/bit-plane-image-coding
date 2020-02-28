@@ -50,9 +50,11 @@ switch num_rgb
     case 2
         bits_per_rgb = [24 numBitPlanes-24];
     case 3
-        bits_per_rgb = [24 24 numBitPlanes-24];
+        bits_per_rgb = [24 24 numBitPlanes-24*2];
+    case 4
+        bits_per_rgb = [24 24 24 numBitPlanes-24*3];
 end
-    
+
 
 
 if isempty(listFiles),
