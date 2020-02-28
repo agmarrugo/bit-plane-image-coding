@@ -27,5 +27,5 @@ The pattern images are stored in the RGB image with the following order:
 
 ![Table 2-70. Pattern Number Mapping. (from dlpu010g.pdf DLPC350 Programmer’s Guide)](doc_support_files/table-2-70.png "Table 2-70. Pattern Number Mapping")
 
-The output image is stored in ``rgb_im`` and by default it is written to
-``out.bmp``
+The output images are stored as ``rgb_im`` and by default it is written to
+``out1.bmp, out2.bmp, ...``
